@@ -106,10 +106,10 @@ class RawProcessingPipelineDemo:
     def to_uint8(self, srgb, img_meta):
         return (srgb*255).astype(np.uint8)
     
-    def resize(self, img, img_meta):
-        if self.params['out_landscape_width'] is None or self.params['out_landscape_height'] is None:
-            return img
-        return resize_using_pil(img, self.params['out_landscape_width'], self.params['out_landscape_height'])
+    # def resize(self, img, img_meta):
+    #     if self.params['out_landscape_width'] is None or self.params['out_landscape_height'] is None:
+    #         return img
+    #     return resize_using_pil(img, self.params['out_landscape_width'], self.params['out_landscape_height'])
     
     def fix_orientation(self, img, img_meta):
         return fix_orientation(img, img_meta['orientation'])
